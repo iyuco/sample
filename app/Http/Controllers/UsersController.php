@@ -37,6 +37,8 @@ class UsersController extends Controller
 
 
         //创建成功后的路由，及欢迎信息
+        // session()->flash('success', '欢迎，您将在这里开启一段新的旅程~');
+        Auth::login($user);
         session()->flash('success', '欢迎，您将在这里开启一段新的旅程~');
         return redirect()->route('users.show', [$user]);
     }
